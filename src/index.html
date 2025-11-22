@@ -1,14 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <title>HW3</title>
+    <title>Квиз: Модели отображения CSS</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="app">
-        
-    </div>
+<main class="quiz-container">
+    <header class="quiz-header">
+        <h1>Квиз: Модели отображения CSS</h1>
+        <p>Ответьте на вопросы, затем посмотрите правильные ответы внизу страницы.</p>
+    </header>
+
+    <section class="question-card">
+        <h2 class="question-title">1. Какое значение display делает элемент блочным?</h2>
+        <div class="options">
+            <label class="option"><input type="radio" name="q1"> inline</label>
+            <label class="option"><input type="radio" name="q1"> block</label>
+            <label class="option"><input type="radio" name="q1"> flex</label>
+            <label class="option"><input type="radio" name="q1"> none</label>
+        </div>
+    </section>
+
+    <section class="question-card">
+        <h2 class="question-title">2. Какие свойства входят в CSS Box Model?</h2>
+        <div class="options">
+            <label class="option"><input type="checkbox" name="q2"> margin</label>
+            <label class="option"><input type="checkbox" name="q2"> padding</label>
+            <label class="option"><input type="checkbox" name="q2"> display</label>
+            <label class="option"><input type="checkbox" name="q2"> border</label>
+        </div>
+    </section>
+
+    <section class="question-card">
+        <h2 class="question-title">3. Что делает свойство box-sizing: border-box?</h2>
+        <div class="options">
+            <label class="option"><input type="radio" name="q3"> Убирает border</label>
+            <label class="option"><input type="radio" name="q3"> Включает padding и border в ширину</label>
+            <label class="option"><input type="radio" name="q3"> Удваивает размер border</label>
+        </div>
+    </section>
+
+    <section class="question-card">
+        <h2 class="question-title">4. Какие элементы по умолчанию inline?</h2>
+        <div class="options">
+            <label class="option"><input type="checkbox" name="q4"> &lt;span&gt;</label>
+            <label class="option"><input type="checkbox" name="q4"> &lt;div&gt;</label>
+            <label class="option"><input type="checkbox" name="q4"> &lt;a&gt;</label>
+            <label class="option"><input type="checkbox" name="q4"> &lt;p&gt;</label>
+        </div>
+    </section>
+
+    <section class="question-card">
+        <h2 class="question-title">5. Как центрировать блочный элемент по горизонтали?</h2>
+        <div class="options">
+            <label class="option"><input type="radio" name="q5"> padding: 0 auto;</label>
+            <label class="option"><input type="radio" name="q5"> margin: 0 auto;</label>
+            <label class="option"><input type="radio" name="q5"> text-align: center;</label>
+        </div>
+    </section>
+
+    <details class="results">
+        <summary class="results-toggle">Правильные ответы</summary>
+        <div class="results-content">
+
+            <div>
+                <div class="correct-answer">Вопрос 1: block</div>
+                <div>Блочным элемент делает значение <b>display: block</b>.</div>
+                <div>Остальные:
+                    <ul>
+                        <li><b>inline</b> делает элемент строчным;</li>
+                        <li><b>flex</b> превращает в flex-контейнер, а не просто блочный;</li>
+                        <li><b>none</b> — скрывает элемент полностью.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div>
+                <div class="correct-answer">Вопрос 2: margin, padding, border</div>
+                <div><b>Box Model</b> включает: margin (отступ), border (рамка), padding (внутренний отступ), content (содержимое). <b>display</b> не относится к box model!</div>
+            </div>
+
+            <div>
+                <div class="correct-answer">Вопрос 3: Включает padding и border в ширину</div>
+                <div><b>box-sizing: border-box</b> учитывает border и padding внутри указанной ширины элемента. Ширина не "раздувается".</div>
+            </div>
+
+            <div>
+                <div class="correct-answer">Вопрос 4: &lt;span&gt;, &lt;a&gt;</div>
+                <div><b>&lt;span&gt;</b> и <b>&lt;a&gt;</b> — это строчные (inline) элементы.
+                    <br><b>&lt;div&gt;</b> и <b>&lt;p&gt;</b> — всегда блочные.
+                </div>
+            </div>
+
+            <div>
+                <div class="correct-answer">Вопрос 5: margin: 0 auto;</div>
+                <div>Для центрирования блочного элемента используется <b>margin: 0 auto;</b> и обязательно должна быть задана ширина.</div>
+                <ul>
+                    <li><b>padding: 0 auto;</b> — некорректно: auto не работает для паддингов.</li>
+                    <li><b>text-align: center;</b> — работает только для центрирования текста или inline-элементов внутри блока.</li>
+                </ul>
+            </div>
+        </div>
+    </details>
+</main>
 </body>
 </html>
